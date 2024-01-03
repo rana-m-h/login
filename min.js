@@ -32,6 +32,7 @@ else{
     singMessege.innerHTML = "Success"
     usersArray.push(user)
     localStorage.setItem('user', JSON.stringify(usersArray))
+    clear()
 }
 
 }
@@ -88,7 +89,10 @@ function isUserExist(email , password){
 
 localStorage.setItem('home' , JSON.stringify(usersArray[i].username))
 
+
+
             return true
+            
         }
     }
     return false
@@ -102,5 +106,11 @@ loginButton.addEventListener('click' , login)
 
 
 if(homepage != null){
-    homepage.innerHTML = `welcome ${JSON.parse(localStorage.getItem('home'))}`
+    homepage.innerHTML =  JSON.parse(localStorage.getItem('home'))
+}
+
+function clear(){
+    singEmail.value = ""
+    singName.value = ""
+    singPassword.value = ""
 }
