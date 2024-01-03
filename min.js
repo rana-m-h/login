@@ -106,7 +106,7 @@ loginButton.addEventListener('click' , login)
 
 
 if(homepage != null){
-    homepage.innerHTML =  JSON.parse(localStorage.getItem('home'))
+    homepage.innerHTML = `welcome ${JSON.parse(localStorage.getItem('home'))}`
 }
 
 function clear(){
